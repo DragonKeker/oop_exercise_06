@@ -9,7 +9,7 @@ int main() {
     float S;
     char option = '0';
     containers::stack<Hexagon<int>, allocators::my_allocator<Hexagon<int>, 800>> q;
-    Hexagon<int> rect{};
+    Hexagon<int> hex{};
     while (option != 'q') {
         std::cout << "choose option (m to open man, q to quit)" << std::endl;
         std::cin >> option;
@@ -26,16 +26,16 @@ int main() {
             break;
         case '1': {
             std::cout << "enter hexagon (have to enter dots consequently): " << std::endl;
-            rect = Hexagon<int>(std::cin);
-            q.push(rect);
+            hex = Hexagon<int>(std::cin);
+            q.push(hex);
             break;
         }
         case '2': {
             std::cout << "enter position to insert to: ";
             std::cin >> N;
             std::cout << "enter hexagon: ";
-            rect = Hexagon<int>(std::cin);
-            q.insert_by_number(N + 1, rect);
+            hex = Hexagon<int>(std::cin);
+            q.insert_by_number(N + 1, hex);
             break;
         }
         case '3': {
